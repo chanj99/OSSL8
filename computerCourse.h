@@ -4,7 +4,6 @@ typedef struct computerCourse //컴공심화 과정
     int credit; //학점
     char designCourse; //설계과목 여부(Y or N)
     char majorRequired; //전공필수 여부(Y or N)
-    char chooseCourse; //내가 담은 과목 여부(Y or N)
 };
 
 int addCourse(computerCourse *c); //수업 목록 추가하기
