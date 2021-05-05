@@ -2,11 +2,24 @@
 #include "computerCourse.h"
 
 int addCourse(computerCourse *c){
-
+    int count = 0;
+    printf("과목이름은?");
+    scanf(" %[^\n]s", c->name);
+    printf("이수구분은?(전공필수, 전공선택, 전공선택필수)");
+    scanf(" %s", c->classification);
+    printf("학점은?");
+    scanf(" %d", &c->credit);
+    printf("설계과목 여부는?(Y or N)");
+    scanf(" %c", &c->designCourse);
+    count++;
+    return count;
 }
+
 void readCourse(computerCourse c){
-
+        printf(" %s  %d학점   %c       %s\n", c.classification, c.credit, c.designCourse, c.name);
 }
+
+/*
 void updateCourse(computerCourse *c){
 
 }
@@ -31,12 +44,24 @@ void addInCart(computerCourse *cart, computerCourse c){
 void showchoose(computerCourse *cart, int count){
 
 }
-
+*/
 
 void listCourse(computerCourse *c, int count){
-
+    printf("  이수구분  학점  설계과목여부  과목이름\n");
+    printf("===============================\n");
+    for(int i =0; i<count; i++){
+        if(c[i].credit == -1) continue;
+        //삭제됐으면 밑에꺼 수행하지 말고 실행해라.
+        printf("%1d", i+1);
+        //데이터의 번호를 먼저 출력해주기
+        readCourse(c[i]);
+        //그 다음 데이터 읽기
+    }
 }
+
+
 int selectMenu(){
+
     int menu;
     printf("\n=========================\n");
     printf("1. 전공과목 조회\n");

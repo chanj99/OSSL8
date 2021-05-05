@@ -9,7 +9,7 @@ int main(){
     computerCourse c[100];
     computerCourse cart[20];
 
-    index = count = loadData(c);
+    //index = count = loadData(c);
 
     while(1){
         menu = selectMenu();
@@ -17,9 +17,22 @@ int main(){
 
         if(menu==1){
             //조회
-        }else if(menu==2){
+            if(count>0){ 
+                //만약 지금 보유하고 있는 데이터가 있다면
+                listCourse(c, index);
+                //list보여주기
+            } else{
+                //만약 지금 보유하고 있는 데이터가 하나도 없다면?
+                printf("데이터가 없습니다!\n");
+            }
+        }
+        else if(menu==2){
             //추가
-        }else if(menu==3){
+              count += addCourse(&c[index]);
+              index++;
+              }
+        /*
+        else if(menu==3){
             //수정
         }else if(menu==4){
             //삭제
@@ -33,7 +46,11 @@ int main(){
             //장바구니에 담기
         }else if(menu==9){
             //장바구니에 담은 과목 보여주기
-        }else if(menu==10){
+        
+
+        }
+        */
+        else if(menu==10){
             break;
         }
     }
