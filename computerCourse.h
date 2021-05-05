@@ -1,10 +1,10 @@
-typedef struct computerCourse //컴공심화 과정
+typedef struct //컴공심화 과정
 {
     char name[50]; //과목이름
     int credit; //학점
     char designCourse; //설계과목 여부(Y or N)
     char classification[10]; //이수구분(전공필수, 전공선택, 전공선택필수)
-};
+}computerCourse;
 
 int addCourse(computerCourse *c); //수업 목록 추가하기
 void readCourse(computerCourse c); //수업 목록 읽기
