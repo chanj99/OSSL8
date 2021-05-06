@@ -41,9 +41,12 @@ void updateCourse(computerCourse *c){
     scanf(" %c", &c->designCourse);
     printf("=>수정완료!\n");
 }
-/*
+
 int deleteCourse(computerCourse *c){
+    c->credit = -1;
 }
+
+/*
 void savaData(computerCourse *c, int count){
 }
 int loadData(computerCourse *c){
