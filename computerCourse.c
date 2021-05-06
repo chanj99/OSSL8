@@ -11,6 +11,7 @@ int addCourse(computerCourse *c){
     scanf(" %d", &c->credit);
     printf("설계과목 여부는?(Y or N)");
     scanf(" %c", &c->designCourse);
+    printf("=>과목추가완료!\n");
     count++;
     return count;
 }
