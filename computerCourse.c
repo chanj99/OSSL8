@@ -44,6 +44,7 @@ void updateCourse(computerCourse *c){
 
 int deleteCourse(computerCourse *c){
     c->credit = -1;
+    return 1;
 }
 
 /*
