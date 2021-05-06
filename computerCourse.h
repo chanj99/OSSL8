@@ -1,28 +1,28 @@
-typedef struct //ì»´ê³µì‹¬í™” ê³¼ì •
+typedef struct //ÄÄ°ø½ÉÈ­ °úÁ¤
 {
-    char name[100]; //ê³¼ëª©ì´ë¦„
-    int credit; //í•™ì 
-    char designCourse; //ì„¤ê³„ê³¼ëª© ì—¬ë¶€(Y or N)
-    char classification[100]; //ì´ìˆ˜êµ¬ë¶„(ì „ê³µí•„ìˆ˜, ì „ê³µì„ íƒ, ì „ê³µì„ íƒí•„ìˆ˜)
+    char name[100]; //°ú¸ñÀÌ¸§
+    int credit; //ÇĞÁ¡
+    char designCourse; //¼³°è°ú¸ñ ¿©ºÎ(Y or N)
+    char classification[100]; //ÀÌ¼ö±¸ºĞ(Àü°øÇÊ¼ö, Àü°ø¼±ÅÃ, Àü°ø¼±ÅÃÇÊ¼ö)
 }computerCourse;
 
-int addCourse(computerCourse *c); //ìˆ˜ì—… ëª©ë¡ ì¶”ê°€í•˜ê¸°
-void readCourse(computerCourse c); //ìˆ˜ì—… ëª©ë¡ ì½ê¸°
+int addCourse(computerCourse *c); //¼ö¾÷ ¸ñ·Ï Ãß°¡ÇÏ±â
+void readCourse(computerCourse c); //¼ö¾÷ ¸ñ·Ï ÀĞ±â
+void updateCourse(computerCourse *c); //¼ö¾÷ ¸ñ·Ï ¾÷µ¥ÀÌÆ®
 /*
-void updateCourse(computerCourse *c); //ìˆ˜ì—… ëª©ë¡ ì—…ë°ì´íŠ¸
-int deleteCourse(computerCourse *c); //ìˆ˜ì—… ì‚­ì œ
+int deleteCourse(computerCourse *c); //¼ö¾÷ »èÁ¦
 
-void savaData(computerCourse *c, int count); //íŒŒì¼ ì €ì¥ ê¸°ëŠ¥
-int loadData(computerCourse *c); //íŒŒì¼ ë¶ˆëŸ¬ì˜¤ê¸° ê¸°ëŠ¥
-void searchCourseByName(computerCourse *c,int count); //ê³¼ëª©ì´ë¦„ìœ¼ë¡œ ê²€ìƒ‰í•˜ëŠ” ê¸°ëŠ¥
-void searchCourseByCredit(computerCourse *c,int count); //í•™ì ìœ¼ë¡œ ê²€ìƒ‰í•˜ëŠ” ê¸°ëŠ¥
-void addInCart(computerCourse *cart, computerCourse c); //ì„ íƒí•œ ê³¼ëª©ì„ ì¥ë°”êµ¬ë‹ˆì— ë‹´ëŠ” ê¸°ëŠ¥
-void showchoose(computerCourse *cart, int count); //ë‚´ê°€ ë‹´ì€ ê³¼ëª©ë§Œ ì¡°íšŒí•  ìˆ˜ ìˆëŠ” ê¸°ëŠ¥ ì¶”ê°€
+void savaData(computerCourse *c, int count); //ÆÄÀÏ ÀúÀå ±â´É
+int loadData(computerCourse *c); //ÆÄÀÏ ºÒ·¯¿À±â ±â´É
+void searchCourseByName(computerCourse *c,int count); //°ú¸ñÀÌ¸§À¸·Î °Ë»öÇÏ´Â ±â´É
+void searchCourseByCredit(computerCourse *c,int count); //ÇĞÁ¡À¸·Î °Ë»öÇÏ´Â ±â´É
+void addInCart(computerCourse *cart, computerCourse c); //¼±ÅÃÇÑ °ú¸ñÀ» Àå¹Ù±¸´Ï¿¡ ´ã´Â ±â´É
+void showchoose(computerCourse *cart, int count); //³»°¡ ´ãÀº °ú¸ñ¸¸ Á¶È¸ÇÒ ¼ö ÀÖ´Â ±â´É Ãß°¡
 
 */
-
-void listCourse(computerCourse *c, int count); //ìˆ˜ì—…ëª©ë¡ ì „ì²´ ì½ê¸°
-int selectMenu(); //ì²˜ìŒ ë©”ë‰´ ì„ íƒ
+int selectDataNum(computerCourse *c, int count);
+void listCourse(computerCourse *c, int count); //¼ö¾÷¸ñ·Ï ÀüÃ¼ ÀĞ±â
+int selectMenu(); //Ã³À½ ¸Ş´º ¼±ÅÃ
 
 
 
