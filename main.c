@@ -46,13 +46,14 @@ int main(){
             int del = 0;
             printf("정말로 삭제하시겠습니까?(삭제:1)");
             scanf("%d", &del);
-            if(del = 1){
-                deleteCourse(&c[delCourse-1]);
+            if(del == 1){
+                if(deleteCourse(&c[delCourse-1]) == 1){
                 printf("삭제됨!\n");
                 count --;
+                }
             }
         }
-        
+
         /*
         else if(menu==5){
             //저장
