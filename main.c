@@ -16,44 +16,55 @@ int main(){
         if((menu==1||menu==3||menu==4)&&count==0) continue;
 
         if(menu==1){
-            //Á¶È¸
+            //ì¡°íšŒ
             if(count>0){ 
-                //¸¸¾à Áö±İ º¸À¯ÇÏ°í ÀÖ´Â µ¥ÀÌÅÍ°¡ ÀÖ´Ù¸é
+                //ë§Œì•½ ì§€ê¸ˆ ë³´ìœ í•˜ê³  ìˆëŠ” ë°ì´í„°ê°€ ìˆë‹¤ë©´
                 listCourse(c, index);
-                //listº¸¿©ÁÖ±â
+                //listë³´ì—¬ì£¼ê¸°
             } else{
-                //¸¸¾à Áö±İ º¸À¯ÇÏ°í ÀÖ´Â µ¥ÀÌÅÍ°¡ ÇÏ³ªµµ ¾ø´Ù¸é?
-                printf("µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù!\n");
+                //ë§Œì•½ ì§€ê¸ˆ ë³´ìœ í•˜ê³  ìˆëŠ” ë°ì´í„°ê°€ í•˜ë‚˜ë„ ì—†ë‹¤ë©´?
+                printf("ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤!\n");
             }
         }
         else if(menu==2){
-            //Ãß°¡
+            //ì¶”ê°€
               count += addCourse(&c[index]);
               index++;
               }
         
         else if(menu==3){
-            //¼öÁ¤
+            //ìˆ˜ì •
             int no = selectDataNum(c,index);
             if(no>0)
                 updateCourse(&c[no-1]);
             else
-                printf("Ãë¼ÒµÇ¾ú½À´Ï´Ù!n");
+                printf("ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤!n");
         }
-        /*else if(menu==4){
-            //»èÁ¦
-        }else if(menu==5){
-            //ÀúÀå
-        }else if(menu==6){
-            //ÀÌ¸§À¸·Î °Ë»ö
-        }else if(menu==7){
-            //ÇĞÁ¡À¸·Î °Ë»ö
-        }else if(menu==8){
-            //Àå¹Ù±¸´Ï¿¡ ´ã±â
-        }else if(menu==9){
-            //Àå¹Ù±¸´Ï¿¡ ´ãÀº °ú¸ñ º¸¿©ÁÖ±â
+        else if(menu==4){
+            //ì‚­ì œ
+            int delCourse = selectDataNum(c, count);
+            int del = 0;
+            printf("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(ì‚­ì œ:1)");
+            scanf("%d", &del);
+            if(del = 1){
+                deleteCourse(&c[delCourse-1]);
+                printf("ì‚­ì œë¨!\n");
+                count --;
+            }
+        }
         
-
+        /*
+        else if(menu==5){
+            //ì €ì¥
+        }else if(menu==6){
+            //ì´ë¦„ìœ¼ë¡œ ê²€ìƒ‰
+        }else if(menu==7){
+            //í•™ì ìœ¼ë¡œ ê²€ìƒ‰
+        }else if(menu==8){
+            //ì¥ë°”êµ¬ë‹ˆì— ë‹´ê¸°
+        }else if(menu==9){
+            //ì¥ë°”êµ¬ë‹ˆì— ë‹´ì€ ê³¼ëª© ë³´ì—¬ì£¼ê¸°
+        
         }
         */
         else if(menu==10){
