@@ -68,11 +68,11 @@ void listCourse(computerCourse *c, int count){
     printf("===============================\n");
     for(int i =0; i<count; i++){
         if(c[i].credit == -1) continue;
-        //삭제됐으면 밑에꺼 수행하지 말고 실행해라.
+        //삭제됐으면 아래의 statement를 수행하지 말고 i번째 loop 나가기
         printf("%1d", i+1);
-        //데이터의 번호를 먼저 출력해주기
+        //데이터의 번호를 먼저 출력
         readCourse(c[i]);
-        //그 다음 데이터 읽기
+        //i번째 데이터 읽기
     }
 }
 
