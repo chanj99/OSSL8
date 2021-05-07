@@ -4,7 +4,7 @@
 int addCourse(computerCourse *c){
     int count = 0;
     printf("과목이름은?");
-    scanf(" %[^\n]s", c->name); //띄어쓰기가 포함된 과목이름이 있기 때문에 엔터키 전 모든 것을 입력 받는다
+    scanf(" %[^\n]s", c->name); //띄어쓰기가 포함된 과목이름이 있기 때문에 %[^\n]s사용 (엔터키 전 모든 것을 입력 받는다)
     printf("이수구분은?(전공필수, 전공선택, 전공선택필수)");
     scanf(" %s", c->classification);
     printf("학점은?");
@@ -17,11 +17,12 @@ int addCourse(computerCourse *c){
 }
 
 void readCourse(computerCourse c){
-        //다른 함수에서도 과목 읽기가 빈번하게 나오기 때문에 readCourse 함수 추가
-        printf(" %s  %d학점   %c       %s\n", c.classification, c.credit, c.designCourse, c.name);
+    //다른 함수에서도 과목 읽기가 빈번하게 나오기 때문에 readCourse 함수 추가
+    printf(" %s  %d학점   %c       %s\n", c.classification, c.credit, c.designCourse, c.name);
 }
 
 int selectDataNum(computerCourse *c,int count){
+    //삭제나 수정 함수를 구현할 때, 특정 함수를 선택해야 하기 때문에 selectDataNum 함수 구현
     int no;
     listCourse(c,count);
     printf("선택한 메뉴를 실행할 데이터 번호는? (취소  :0) " );
@@ -33,7 +34,7 @@ int selectDataNum(computerCourse *c,int count){
 
 void updateCourse(computerCourse *c){
     printf("새 과목이름은?");
-    scanf(" %[^\n]s", c->name);
+    scanf(" %[^\n]s", c->name); //띄어쓰기가 포함된 과목이름이 있기 때문에 %[^\n]s사용 (엔터키 전 모든 것을 입력 받는다)
     printf("새 이수구분은?(전공필수, 전공선택, 전공선택필수)");
     scanf(" %s", c->classification);
     printf("새 학점은?");
