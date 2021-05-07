@@ -5,7 +5,7 @@
 int main(){
     int menu;
     int index=0,count=0;
-    int cartIndex,cartCount;
+    int cartIndex=0,cartCount=0;
     computerCourse c[100];
     computerCourse cart[20];
 
@@ -61,9 +61,13 @@ int main(){
             //이름으로 검색
         }else if(menu==7){
             //학점으로 검색
-        }else if(menu==8){
+        }*/
+        else if(menu==8){
+            int no = selectDataNum(c,index);
+            cartCount += addInCart(&cart[cartIndex++],c[no-1]);
             //장바구니에 담기
-        }else if(menu==9){
+        }
+        /*else if(menu==9){
             //장바구니에 담은 과목 보여주기
         
         }
