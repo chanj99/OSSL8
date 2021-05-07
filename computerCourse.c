@@ -43,6 +43,7 @@ void updateCourse(computerCourse *c){
 }
 
 int deleteCourse(computerCourse *c){
+    //과목을 삭제 하면 학점을 -1로 만들어 준다.
     c->credit = -1;
     return 1;
 }
