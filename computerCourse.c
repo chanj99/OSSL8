@@ -80,7 +80,7 @@ void listCourse(computerCourse *c, int count){
 
 
 int selectMenu(){
-
+    //main함수가 실행되고 종료되기 전까지 메뉴를 보여주는 함수
     int menu;
     printf("\n=========================\n");
     printf("1. 전공과목 조회\n");
@@ -97,5 +97,4 @@ int selectMenu(){
     scanf("%d",&menu);
     
     return menu;
-
 }
