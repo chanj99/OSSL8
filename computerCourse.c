@@ -17,6 +17,7 @@ int addCourse(computerCourse *c){
 }
 
 void readCourse(computerCourse c){
+        //다른 함수에서도 과목 읽기가 빈번하게 나오기 때문에 readCourse 함수 추가
         printf(" %s  %d학점   %c       %s\n", c.classification, c.credit, c.designCourse, c.name);
 }
 
