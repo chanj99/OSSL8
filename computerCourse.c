@@ -4,7 +4,7 @@
 int addCourse(computerCourse *c){
     int count = 0;
     printf("과목이름은?");
-    scanf(" %[^\n]s", c->name);
+    scanf(" %[^\n]s", c->name); //띄어쓰기가 포함된 과목이름이 있기 때문에 엔터키 전 모든 것을 입력 받는다
     printf("이수구분은?(전공필수, 전공선택, 전공선택필수)");
     scanf(" %s", c->classification);
     printf("학점은?");
@@ -12,8 +12,8 @@ int addCourse(computerCourse *c){
     printf("설계과목 여부는?(Y or N)");
     scanf(" %c", &c->designCourse);
     printf("=>과목추가완료!\n");
-    count++;
-    return count;
+    count++; //과목 하나 추가
+    return count; 
 }
 
 void readCourse(computerCourse c){
