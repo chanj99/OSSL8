@@ -18,37 +18,37 @@ int main(){
         if(menu==1){
             //ì¡°íšŒ
             if(count>0){ 
-                //ë§Œì•½ ì§€ê¸ˆ ë³´ìœ í•˜ê³  ìžˆëŠ” ë°ì´í„°ê°€ ìžˆë‹¤ë©´
+                //ë§Œì•½ ì§?ê¸? ë³´ìœ ?•˜ê³? ?žˆ?Š” ?°?´?„°ê°? ?žˆ?‹¤ë©?
                 listCourse(c, index);
                 //listë³´ì—¬ì£¼ê¸°
             } else{
-                //ë§Œì•½ ì§€ê¸ˆ ë³´ìœ í•˜ê³  ìžˆëŠ” ë°ì´í„°ê°€ í•˜ë‚˜ë„ ì—†ë‹¤ë©´?
-                printf("ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤!\n");
+                //ë§Œì•½ ì§?ê¸? ë³´ìœ ?•˜ê³? ?žˆ?Š” ?°?´?„°ê°? ?•˜?‚˜?„ ?—†?‹¤ë©??
+                printf("?°?´?„°ê°? ?—†?Šµ?‹ˆ?‹¤!\n");
             }
         }
         else if(menu==2){
-            //ì¶”ê°€
+            //ì¶”ê??
               count += addCourse(&c[index]);
               index++;
               }
         
         else if(menu==3){
-            //ìˆ˜ì •
+            //?ˆ˜? •
             int no = selectDataNum(c,index);
             if(no>0)
                 updateCourse(&c[no-1]);
             else
-                printf("ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤!n");
+                printf("ì·¨ì†Œ?˜?—ˆ?Šµ?‹ˆ?‹¤!n");
         }
         else if(menu==4){
-            //ì‚­ì œ
+            //?‚­? œ
             int delCourse = selectDataNum(c, index);
             int del = 0;
-            printf("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(ì‚­ì œ:1)");
+            printf("? •ë§ë¡œ ?‚­? œ?•˜?‹œê² ìŠµ?‹ˆê¹??(?‚­? œ:1)");
             scanf("%d", &del);
             if(del == 1){
                 if(deleteCourse(&c[delCourse-1]) == 1){
-                printf("ì‚­ì œë¨!\n");
+                printf("?‚­? œ?¨!\n");
                 count --;
                 }
             }
@@ -56,26 +56,26 @@ int main(){
 
         /*
         else if(menu==5){
-            //ì €ìž¥
+            //????ž¥
         }else if(menu==6){
-            //ì´ë¦„ìœ¼ë¡œ ê²€ìƒ‰
+            //?´ë¦„ìœ¼ë¡? ê²??ƒ‰
         }else if(menu==7){
-            //í•™ì ìœ¼ë¡œ ê²€ìƒ‰
+            //?•™? ?œ¼ë¡? ê²??ƒ‰
         }*/
         else if(menu==8){
             int no = selectDataNum(c,index);
             cartCount += addInCart(&cart[cartIndex++],c[no-1]);
-            //ìž¥ë°”êµ¬ë‹ˆì— ë‹´ê¸°
+            //?ž¥ë°”êµ¬?‹ˆ?— ?‹´ê¸?
         }
         else if(menu==9){ 
-            //ìž¥ë°”êµ¬ë‹ˆì— ë‹´ì€ ê³¼ëª© ë³´ì—¬ì£¼ê¸°
-            if(count>0){ 
-                //ë§Œì•½ ì§€ê¸ˆ ìž¥ë°”êµ¬ë‹ˆì— ìžˆëŠ” ë°ì´í„°ê°€ ìžˆë‹¤ë©´
+            //?ž¥ë°”êµ¬?‹ˆ?— ?‹´??? ê³¼ëª© ë³´ì—¬ì£¼ê¸°
+            if(cartCount>0){ 
+                //ë§Œì•½ ì§?ê¸? ?ž¥ë°”êµ¬?‹ˆ?— ?žˆ?Š” ?°?´?„°ê°? ?žˆ?‹¤ë©?
                 showchoose(cart, cartCount);
                 //listë³´ì—¬ì£¼ê¸°
             } else{
-                //ë§Œì•½ ì§€ê¸ˆ ìž¥ë°”êµ¬ë‹ˆì— ìžˆëŠ” ë°ì´í„°ê°€ í•˜ë‚˜ë„ ì—†ë‹¤ë©´?
-                printf("ìž¥ë°”êµ¬ë‹ˆì— ë‹´ê¸´ ê³¼ëª©ì´ ì—†ìŠµë‹ˆë‹¤.\n");
+                //ë§Œì•½ ì§?ê¸? ?ž¥ë°”êµ¬?‹ˆ?— ?žˆ?Š” ?°?´?„°ê°? ?•˜?‚˜?„ ?—†?‹¤ë©??
+                printf("?ž¥ë°”êµ¬?‹ˆ?— ?‹´ê¸? ê³¼ëª©?´ ?—†?Šµ?‹ˆ?‹¤.\n");
             }
         
         }
