@@ -55,6 +55,21 @@ int addInCart(computerCourse *cart, computerCourse c){
     printf("선택하신 과목이 장바구니에 추가되었습니다!\n");
     return 1;
 }
+
+void showchoose(computerCourse *cart, int count){ //장바구니에 담은 과목
+    print("==> 장바구니에 담은 과목입니다.\n");
+    printf("  이수구분  학점  설계과목여부  과목이름\n");
+    printf("===============================\n");
+    for(int i =0; i<count; i++){
+        if(cart[i].credit == -1) continue;
+        //삭제됐으면 아래의 statement를 수행하지 말고 i번째 loop 나가기
+        printf("%1d", i+1);
+        //데이터의 번호를 먼저 출력
+        readCourse(cart[i]);
+        //i번째 데이터 읽기
+    }
+}
+
 /*
 void savaData(computerCourse *c, int count){
 }
@@ -64,8 +79,7 @@ void searchCourseByName(computerCourse *c,int count){
 }
 void searchCourseByCredit(computerCourse *c,int count){
 }
-void showchoose(computerCourse *cart, int count){
-}
+
 */
 
 void listCourse(computerCourse *c, int count){
