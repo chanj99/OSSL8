@@ -69,7 +69,7 @@ int main(){
         }
         else if(menu==9){ 
             //장바구니에 담은 과목 보여주기
-            if(count>0){ 
+            if(cartCount>0){ 
                 //만약 지금 장바구니에 있는 데이터가 있다면
                 showchoose(cart, cartCount);
                 //list보여주기
