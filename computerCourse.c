@@ -50,6 +50,11 @@ int deleteCourse(computerCourse *c){
     return 1;
 }
 
+int addInCart(computerCourse *cart, computerCourse c){
+    *cart = c;
+    printf("선택하신 과목이 장바구니에 추가되었습니다!\n");
+    return 1;
+}
 /*
 void savaData(computerCourse *c, int count){
 }
@@ -58,8 +63,6 @@ int loadData(computerCourse *c){
 void searchCourseByName(computerCourse *c,int count){
 }
 void searchCourseByCredit(computerCourse *c,int count){
-}
-void addInCart(computerCourse *cart, computerCourse c){
 }
 void showchoose(computerCourse *cart, int count){
 }

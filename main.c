@@ -5,7 +5,7 @@
 int main(){
     int menu;
     int index=0,count=0;
-    int cartIndex,cartCount;
+    int cartIndex=0,cartCount=0;
     computerCourse c[100];
     computerCourse cart[20];
 
@@ -16,39 +16,39 @@ int main(){
         if((menu==1||menu==3||menu==4)&&count==0) continue;
 
         if(menu==1){
-            //ì¡°íšŒ
+            //Á¶È¸
             if(count>0){ 
-                //ë§Œì•½ ì§€ê¸ˆ ë³´ìœ í•˜ê³  ìˆëŠ” ë°ì´í„°ê°€ ìˆë‹¤ë©´
+                //¸¸¾à Áö±İ º¸À¯ÇÏ°í ÀÖ´Â µ¥ÀÌÅÍ°¡ ÀÖ´Ù¸é
                 listCourse(c, index);
-                //listë³´ì—¬ì£¼ê¸°
+                //listº¸¿©ÁÖ±â
             } else{
-                //ë§Œì•½ ì§€ê¸ˆ ë³´ìœ í•˜ê³  ìˆëŠ” ë°ì´í„°ê°€ í•˜ë‚˜ë„ ì—†ë‹¤ë©´?
-                printf("ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤!\n");
+                //¸¸¾à Áö±İ º¸À¯ÇÏ°í ÀÖ´Â µ¥ÀÌÅÍ°¡ ÇÏ³ªµµ ¾ø´Ù¸é?
+                printf("µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù!\n");
             }
         }
         else if(menu==2){
-            //ì¶”ê°€
+            //Ãß°¡
               count += addCourse(&c[index]);
               index++;
               }
         
         else if(menu==3){
-            //ìˆ˜ì •
+            //¼öÁ¤
             int no = selectDataNum(c,index);
             if(no>0)
                 updateCourse(&c[no-1]);
             else
-                printf("ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤!n");
+                printf("Ãë¼ÒµÇ¾ú½À´Ï´Ù!n");
         }
         else if(menu==4){
-            //ì‚­ì œ
-            int delCourse = selectDataNum(c, count);
+            //»èÁ¦
+            int delCourse = selectDataNum(c, index);
             int del = 0;
-            printf("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(ì‚­ì œ:1)");
+            printf("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(»èÁ¦:1)");
             scanf("%d", &del);
             if(del == 1){
                 if(deleteCourse(&c[delCourse-1]) == 1){
-                printf("ì‚­ì œë¨!\n");
+                printf("»èÁ¦µÊ!\n");
                 count --;
                 }
             }
@@ -56,15 +56,19 @@ int main(){
 
         /*
         else if(menu==5){
-            //ì €ì¥
+            //ÀúÀå
         }else if(menu==6){
-            //ì´ë¦„ìœ¼ë¡œ ê²€ìƒ‰
+            //ÀÌ¸§À¸·Î °Ë»ö
         }else if(menu==7){
-            //í•™ì ìœ¼ë¡œ ê²€ìƒ‰
-        }else if(menu==8){
-            //ì¥ë°”êµ¬ë‹ˆì— ë‹´ê¸°
-        }else if(menu==9){
-            //ì¥ë°”êµ¬ë‹ˆì— ë‹´ì€ ê³¼ëª© ë³´ì—¬ì£¼ê¸°
+            //ÇĞÁ¡À¸·Î °Ë»ö
+        }*/
+        else if(menu==8){
+            int no = selectDataNum(c,index);
+            cartCount += addInCart(&cart[cartIndex++],c[no-1]);
+            //Àå¹Ù±¸´Ï¿¡ ´ã±â
+        }
+        /*else if(menu==9){
+            //Àå¹Ù±¸´Ï¿¡ ´ãÀº °ú¸ñ º¸¿©ÁÖ±â
         
         }
         */
