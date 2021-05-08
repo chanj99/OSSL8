@@ -57,7 +57,7 @@ int addInCart(computerCourse *cart, computerCourse c){
 }
 
 void showchoose(computerCourse *cart, int count){ //장바구니에 담은 과목
-    print("==> 장바구니에 담은 과목입니다.\n");
+    printf("==> 장바구니에 담은 과목입니다.\n");
     printf("  이수구분  학점  설계과목여부  과목이름\n");
     printf("===============================\n");
     for(int i =0; i<count; i++){
