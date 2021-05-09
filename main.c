@@ -3,8 +3,8 @@
 #include "computerCourse.h"
 
 int main(){
-    int menu;
-    int index=0,count=0;
+    int menu; //메뉴 선택
+    int index=0,count=0; 
     int cartIndex=0,cartCount=0;
     computerCourse c[100];
     computerCourse cart[20];
@@ -27,7 +27,7 @@ int main(){
             }
         }
         else if(menu==2){
-            //추가
+              //추가
               count += addCourse(&c[index]);
               index++;
               }
@@ -63,16 +63,17 @@ int main(){
             //학점으로 검색
         }*/
         else if(menu==8){
+            //장바구니에 과목 담기
             int no = selectDataNum(c,index);
             cartCount += addInCart(&cart[cartIndex++],c[no-1]);
-            //장바구니에 담기
         }
+
         else if(menu==9){ 
             //장바구니에 담은 과목 보여주기
             if(cartCount>0){ 
                 //만약 지금 장바구니에 있는 데이터가 있다면
                 showchoose(cart, cartCount);
-                //list보여주기
+                //장바구니에 담은 과목 list보여주기
             } else{
                 //만약 지금 장바구니에 있는 데이터가 하나도 없다면?
                 printf("장바구니에 담긴 과목이 없습니다.\n");
