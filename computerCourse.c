@@ -52,14 +52,14 @@ int deleteCourse(computerCourse *c){
 
 int addInCart(computerCourse *cart, computerCourse c){
     *cart = c;
-    printf("선택하신 과목이 장바구니에 추가되었습니다!\n");
+    printf("=>선택하신 과목이 장바구니에 추가되었습니다!\n");
     return 1;
 }
 
 void showchoose(computerCourse *cart, int count){ //장바구니에 담은 과목
-    printf("==> 장바구니에 담은 과목입니다.\n");
-    printf("  이수구분  학점  설계과목여부  과목이름\n");
-    printf("=====================================\n");
+    printf("\n==> 장바구니에 담은 과목입니다.\n");
+    printf("  이수구분      학점  설계과목여부  과목이름\n");
+    printf("============================================\n");
     for(int i =0; i<count; i++){
         if(cart[i].credit == -1) continue;
         //삭제됐으면 아래의 statement를 수행하지 말고 i번째 loop 나가기
