@@ -57,11 +57,10 @@ int main(){
                 printf("=>취소됨!\n");
             }
         }
-
-        /*
         else if(menu==5){
             //저장
-        }else if(menu==6){
+            saveCourse(c,index);
+        }/*else if(menu==6){
             //이름으로 검색
         }else if(menu==7){
             //학점으로 검색

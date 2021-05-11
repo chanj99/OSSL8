@@ -70,9 +70,18 @@ void showchoose(computerCourse *cart, int count){ //장바구니에 담은 과목
     }
 }
 
-/*
-void savaData(computerCourse *c, int count){
+void saveCourse(computerCourse *c, int count){
+    FILE *fp;
+    fp = fopen("test.txt","wt");
+    for(int i=0;i<count;i++){
+        if(c[i].credit==-1) continue;
+        fprintf(fp,"%s %d %c %s\n",c[i].classification,c[i].credit,c[i].designCourse,c[i].name);
+    }
+    fclose(fp);
+    printf("=>저장됨!\n");
 }
+
+/*
 int loadData(computerCourse *c){
 }
 void searchCourseByName(computerCourse *c,int count){
