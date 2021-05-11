@@ -3,29 +3,29 @@
 
 int addCourse(computerCourse *c){
     int count = 0;
-    printf("\n°ú¸ñÀÌ¸§Àº? ");
-    scanf(" %[^\n]s", c->name); //¶ç¾î¾²±â°¡ Æ÷ÇÔµÈ °ú¸ñÀÌ¸§ÀÌ ÀÖ±â ¶§¹®¿¡ %[^\n]s»ç¿ë (¿£ÅÍÅ° Àü ¸ğµç °ÍÀ» ÀÔ·Â ¹Ş´Â´Ù)
-    printf("ÀÌ¼ö±¸ºĞÀº?(Àü°øÇÊ¼ö, Àü°ø¼±ÅÃ, Àü°ø¼±ÅÃÇÊ¼ö) ");
+    printf("\nê³¼ëª©ì´ë¦„ì€? ");
+    scanf(" %[^\n]s", c->name); //ë„ì–´ì“°ê¸°ê°€ í¬í•¨ëœ ê³¼ëª©ì´ë¦„ì´ ìˆê¸° ë•Œë¬¸ì— %[^\n]sì‚¬ìš© (ì—”í„°í‚¤ ì „ ëª¨ë“  ê²ƒì„ ì…ë ¥ ë°›ëŠ”ë‹¤)
+    printf("ì´ìˆ˜êµ¬ë¶„ì€?(ì „ê³µí•„ìˆ˜, ì „ê³µì„ íƒ, ì „ê³µì„ íƒí•„ìˆ˜) ");
     scanf(" %s", c->classification);
-    printf("ÇĞÁ¡Àº? ");
+    printf("í•™ì ì€? ");
     scanf(" %d", &c->credit);
-    printf("¼³°è°ú¸ñ ¿©ºÎ´Â?(Y or N) ");
+    printf("ì„¤ê³„ê³¼ëª© ì—¬ë¶€ëŠ”?(Y or N) ");
     scanf(" %c", &c->designCourse);
-    printf("=>°ú¸ñÃß°¡¿Ï·á!\n");
-    count++; //°ú¸ñ ÇÏ³ª Ãß°¡
+    printf("=>ê³¼ëª©ì¶”ê°€ì™„ë£Œ!\n");
+    count++; //ê³¼ëª© í•˜ë‚˜ ì¶”ê°€
     return count; 
 }
 
 void readCourse(computerCourse c){
-    //´Ù¸¥ ÇÔ¼ö¿¡¼­µµ °ú¸ñ ÀĞ±â°¡ ºó¹øÇÏ°Ô ³ª¿À±â ¶§¹®¿¡ readCourse ÇÔ¼ö Ãß°¡
-    printf(" %-12s  %dÇĞÁ¡   %9c   %s\n", c.classification, c.credit, c.designCourse, c.name);
+    //ë‹¤ë¥¸ í•¨ìˆ˜ì—ì„œë„ ê³¼ëª© ì½ê¸°ê°€ ë¹ˆë²ˆí•˜ê²Œ ë‚˜ì˜¤ê¸° ë•Œë¬¸ì— readCourse í•¨ìˆ˜ ì¶”ê°€
+    printf(" %-12s  %dí•™ì    %9c   %s\n", c.classification, c.credit, c.designCourse, c.name);
 }
 
 int selectDataNum(computerCourse *c,int count){
-    //»èÁ¦³ª ¼öÁ¤ ÇÔ¼ö¸¦ ±¸ÇöÇÒ ¶§, Æ¯Á¤ ÇÔ¼ö¸¦ ¼±ÅÃÇØ¾ß ÇÏ±â ¶§¹®¿¡ selectDataNum ÇÔ¼ö ±¸Çö
+    //ì‚­ì œë‚˜ ìˆ˜ì • í•¨ìˆ˜ë¥¼ êµ¬í˜„í•  ë•Œ, íŠ¹ì • í•¨ìˆ˜ë¥¼ ì„ íƒí•´ì•¼ í•˜ê¸° ë•Œë¬¸ì— selectDataNum í•¨ìˆ˜ êµ¬í˜„
     int no;
     listCourse(c,count);
-    printf("¼±ÅÃÇÑ ¸Ş´º¸¦ ½ÇÇàÇÒ µ¥ÀÌÅÍ ¹øÈ£´Â? (Ãë¼Ò  :0) " );
+    printf("ì„ íƒí•œ ë©”ë‰´ë¥¼ ì‹¤í–‰í•  ë°ì´í„° ë²ˆí˜¸ëŠ”? (ì·¨ì†Œ  :0) " );
     scanf("%d",&no);
     getchar();
     return no;
@@ -33,40 +33,40 @@ int selectDataNum(computerCourse *c,int count){
 
 
 void updateCourse(computerCourse *c){
-    printf("\n»õ °ú¸ñÀÌ¸§Àº? ");
-    scanf(" %[^\n]s", c->name); //¶ç¾î¾²±â°¡ Æ÷ÇÔµÈ °ú¸ñÀÌ¸§ÀÌ ÀÖ±â ¶§¹®¿¡ %[^\n]s»ç¿ë (¿£ÅÍÅ° Àü ¸ğµç °ÍÀ» ÀÔ·Â ¹Ş´Â´Ù)
-    printf("»õ ÀÌ¼ö±¸ºĞÀº?(Àü°øÇÊ¼ö, Àü°ø¼±ÅÃ, Àü°ø¼±ÅÃÇÊ¼ö) ");
+    printf("\nìƒˆ ê³¼ëª©ì´ë¦„ì€? ");
+    scanf(" %[^\n]s", c->name); //ë„ì–´ì“°ê¸°ê°€ í¬í•¨ëœ ê³¼ëª©ì´ë¦„ì´ ìˆê¸° ë•Œë¬¸ì— %[^\n]sì‚¬ìš© (ì—”í„°í‚¤ ì „ ëª¨ë“  ê²ƒì„ ì…ë ¥ ë°›ëŠ”ë‹¤)
+    printf("ìƒˆ ì´ìˆ˜êµ¬ë¶„ì€?(ì „ê³µí•„ìˆ˜, ì „ê³µì„ íƒ, ì „ê³µì„ íƒí•„ìˆ˜) ");
     scanf(" %s", c->classification);
-    printf("»õ ÇĞÁ¡Àº? ");
+    printf("ìƒˆ í•™ì ì€? ");
     scanf(" %d", &c->credit);
-    printf("¼³°è°ú¸ñ ¿©ºÎ´Â?(Y or N) ");
+    printf("ì„¤ê³„ê³¼ëª© ì—¬ë¶€ëŠ”?(Y or N) ");
     scanf(" %c", &c->designCourse);
-    printf("=>¼öÁ¤¿Ï·á!\n");
+    printf("=>ìˆ˜ì •ì™„ë£Œ!\n");
 }
 
 int deleteCourse(computerCourse *c){
-    //°ú¸ñÀ» »èÁ¦ ÇÏ¸é ÇĞÁ¡À» -1·Î ¸¸µé¾î ÁØ´Ù.
+    //ê³¼ëª©ì„ ì‚­ì œ í•˜ë©´ í•™ì ì„ -1ë¡œ ë§Œë“¤ì–´ ì¤€ë‹¤.
     c->credit = -1;
     return 1;
 }
 
 int addInCart(computerCourse *cart, computerCourse c){
     *cart = c;
-    printf("=>¼±ÅÃÇÏ½Å °ú¸ñÀÌ Àå¹Ù±¸´Ï¿¡ Ãß°¡µÇ¾ú½À´Ï´Ù!\n");
+    printf("=>ì„ íƒí•˜ì‹  ê³¼ëª©ì´ ì¥ë°”êµ¬ë‹ˆì— ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤!\n");
     return 1;
 }
 
-void showchoose(computerCourse *cart, int count){ //Àå¹Ù±¸´Ï¿¡ ´ãÀº °ú¸ñ
-    printf("\n==> Àå¹Ù±¸´Ï¿¡ ´ãÀº °ú¸ñÀÔ´Ï´Ù.\n");
-    printf("  ÀÌ¼ö±¸ºĞ      ÇĞÁ¡  ¼³°è°ú¸ñ¿©ºÎ  °ú¸ñÀÌ¸§\n");
+void showchoose(computerCourse *cart, int count){ //ì¥ë°”êµ¬ë‹ˆì— ë‹´ì€ ê³¼ëª©
+    printf("\n==> ì¥ë°”êµ¬ë‹ˆì— ë‹´ì€ ê³¼ëª©ì…ë‹ˆë‹¤.\n");
+    printf("  ì´ìˆ˜êµ¬ë¶„      í•™ì   ì„¤ê³„ê³¼ëª©ì—¬ë¶€  ê³¼ëª©ì´ë¦„\n");
     printf("============================================\n");
     for(int i =0; i<count; i++){
         if(cart[i].credit == -1) continue;
-        //»èÁ¦µÆÀ¸¸é ¾Æ·¡ÀÇ statement¸¦ ¼öÇàÇÏÁö ¸»°í i¹øÂ° loop ³ª°¡±â
+        //ì‚­ì œëìœ¼ë©´ ì•„ë˜ì˜ statementë¥¼ ìˆ˜í–‰í•˜ì§€ ë§ê³  ië²ˆì§¸ loop ë‚˜ê°€ê¸°
         printf("%1d", i+1);
-        //µ¥ÀÌÅÍÀÇ ¹øÈ£¸¦ ¸ÕÀú Ãâ·Â
+        //ë°ì´í„°ì˜ ë²ˆí˜¸ë¥¼ ë¨¼ì € ì¶œë ¥
         readCourse(cart[i]);
-        //i¹øÂ° µ¥ÀÌÅÍ ÀĞ±â
+        //ië²ˆì§¸ ë°ì´í„° ì½ê¸°
     }
 }
 
@@ -78,48 +78,70 @@ void saveCourse(computerCourse *c, int count){
         fprintf(fp,"%s %d %c %s\n",c[i].classification,c[i].credit,c[i].designCourse,c[i].name);
     }
     fclose(fp);
-    printf("=>ÀúÀåµÊ!\n");
+    printf("=>ì €ì¥ë¨!\n");
+}
+
+
+int loadData(computerCourse *c){
+    int count = 0;
+    FILE *fp;
+    fp = fopen("test.txt", "rt");
+    if(fp == NULL){
+        printf("=> íŒŒì¼ ì—†ìŒ\n");
+        return 0;
+    }
+    else{
+        for(int i  = 0; i<100; i++){
+            fscanf(fp, "%s", c[i].classification);
+            if(feof(fp)) break;
+            fscanf(fp, "%d", &c[i].credit);
+            fscanf(fp, "%c", &c[i].designCourse);
+            fscanf(fp, "%s", c[i].name);
+            count++;
+        }
+        fclose(fp);
+        printf("=> íŒŒì¼ ë¡œë”© ì„±ê³µ!\n");
+        return count;
+    }
+
 }
 
 /*
-int loadData(computerCourse *c){
-}
 void searchCourseByName(computerCourse *c,int count){
 }
 void searchCourseByCredit(computerCourse *c,int count){
 }
-
 */
 
 void listCourse(computerCourse *c, int count){
-    printf("\n  ÀÌ¼ö±¸ºĞ      ÇĞÁ¡  ¼³°è°ú¸ñ¿©ºÎ  °ú¸ñÀÌ¸§\n");
+    printf("\n  ì´ìˆ˜êµ¬ë¶„      í•™ì   ì„¤ê³„ê³¼ëª©ì—¬ë¶€  ê³¼ëª©ì´ë¦„\n");
     printf("============================================\n");
     for(int i =0; i<count; i++){
         if(c[i].credit == -1) continue;
-        //»èÁ¦µÆÀ¸¸é ¾Æ·¡ÀÇ statement¸¦ ¼öÇàÇÏÁö ¸»°í i¹øÂ° loop ³ª°¡±â
+        //ì‚­ì œëìœ¼ë©´ ì•„ë˜ì˜ statementë¥¼ ìˆ˜í–‰í•˜ì§€ ë§ê³  ië²ˆì§¸ loop ë‚˜ê°€ê¸°
         printf("%1d", i+1);
-        //µ¥ÀÌÅÍÀÇ ¹øÈ£¸¦ ¸ÕÀú Ãâ·Â
+        //ë°ì´í„°ì˜ ë²ˆí˜¸ë¥¼ ë¨¼ì € ì¶œë ¥
         readCourse(c[i]);
-        //i¹øÂ° µ¥ÀÌÅÍ ÀĞ±â
+        //ië²ˆì§¸ ë°ì´í„° ì½ê¸°
     }
 }
 
 
 int selectMenu(){
-    //mainÇÔ¼ö°¡ ½ÇÇàµÇ°í Á¾·áµÇ±â Àü±îÁö ¸Ş´º¸¦ º¸¿©ÁÖ´Â ÇÔ¼ö
+    //mainí•¨ìˆ˜ê°€ ì‹¤í–‰ë˜ê³  ì¢…ë£Œë˜ê¸° ì „ê¹Œì§€ ë©”ë‰´ë¥¼ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜
     int menu;
     printf("\n=========================\n");
-    printf("1. Àü°ø°ú¸ñ Á¶È¸\n");
-    printf("2. Àü°ø°ú¸ñ Ãß°¡\n");
-    printf("3. Àü°ø°ú¸ñ Á¤º¸ ¼öÁ¤\n");
-    printf("4. Àü°ø°ú¸ñ »èÁ¦\n");
-    printf("5. ÀúÀå\n");
-    printf("6. °ú¸ñ ÀÌ¸§À¸·Î °Ë»ö\n");
-    printf("7. ÇĞÁ¡À¸·Î °Ë»ö\n");
-    printf("8. Àå¹Ù±¸´Ï¿¡ ´ã±â\n");
-    printf("9. Àå¹Ù±¸´Ï º¸±â\n");
-    printf("10. Á¾·á\n");
-    printf("¿øÇÏ´Â ¸Ş´º ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+    printf("1. ì „ê³µê³¼ëª© ì¡°íšŒ\n");
+    printf("2. ì „ê³µê³¼ëª© ì¶”ê°€\n");
+    printf("3. ì „ê³µê³¼ëª© ì •ë³´ ìˆ˜ì •\n");
+    printf("4. ì „ê³µê³¼ëª© ì‚­ì œ\n");
+    printf("5. ì €ì¥\n");
+    printf("6. ê³¼ëª© ì´ë¦„ìœ¼ë¡œ ê²€ìƒ‰\n");
+    printf("7. í•™ì ìœ¼ë¡œ ê²€ìƒ‰\n");
+    printf("8. ì¥ë°”êµ¬ë‹ˆì— ë‹´ê¸°\n");
+    printf("9. ì¥ë°”êµ¬ë‹ˆ ë³´ê¸°\n");
+    printf("10. ì¢…ë£Œ\n");
+    printf("ì›í•˜ëŠ” ë©”ë‰´ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
     scanf("%d",&menu);
     
     return menu;
