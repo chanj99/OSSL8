@@ -13,9 +13,9 @@ int deleteCourse(computerCourse *c); //수업 삭제
 int addInCart(computerCourse *cart, computerCourse c); //선택한 과목을 장바구니에 담는 기능
 void showchoose(computerCourse *cart, int count); //내가 담은 과목만 조회할 수 있는 기능 추가
 void saveCourse(computerCourse *c, int count); //파일 저장 기능
+int loadData(computerCourse *c); //파일 불러오기 기능
 
 /*
-int loadData(computerCourse *c); //파일 불러오기 기능
 void searchCourseByName(computerCourse *c,int count); //과목이름으로 검색하는 기능
 void searchCourseByCredit(computerCourse *c,int count); //학점으로 검색하는 기능
 */
