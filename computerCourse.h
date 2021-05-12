@@ -16,9 +16,9 @@ void saveCourse(computerCourse *c, int count); //파일 저장 기능
 int loadData(computerCourse *c); //파일 불러오기 기능
 void searchCourseByCredit(computerCourse *c,int count); //학점으로 검색하는 기능
 
-/*
+
 void searchCourseByName(computerCourse *c,int count); //과목이름으로 검색하는 기능
-*/
+
 
 int selectDataNum(computerCourse *c, int count);
 void listCourse(computerCourse *c, int count); //수업목록 전체 읽기
