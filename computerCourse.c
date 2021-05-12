@@ -112,7 +112,7 @@ void searchCourseByCredit(computerCourse *c,int count){
     int search = 0;
 
     printf("검색할 학점은? ");
-    scanf("%d", search);
+    scanf("%d", &search);
     printf("  이수구분      학점  설계과목여부  과목이름\n");
     printf("============================================\n");
     for(int i =0; i<count; i++){
