@@ -60,11 +60,13 @@ int main(){
         else if(menu==5){
             //저장
             saveCourse(c,index);
-        }/*else if(menu==6){
+        }else if(menu==6){
             //이름으로 검색
+            searchCourseByName(c,index);
         }else if(menu==7){
             //학점으로 검색
-        }*/
+            searchCourseByCredit(c,index);
+        }
         else if(menu==8){
             //장바구니에 과목 담기
             int no = selectDataNum(c,index);
