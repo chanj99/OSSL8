@@ -106,11 +106,31 @@ int loadData(computerCourse *c){
 
 }
 
+void searchCourseByCredit(computerCourse *c,int count){
+    int searchresult = 0;
+    int search = 0;
+
+    printf("검색할 학점은? ");
+    scanf("%d", search);
+    printf("  이수구분      학점  설계과목여부  과목이름\n");
+    printf("============================================\n");
+    for(int i =0; i<count; i++){
+        if(c[i].credit == -1) continue;
+        if(c[i].credit == search){
+            printf("%2d", i+1);
+            readCourse(c[i]);
+            searchresult++;
+        }
+    }
+    if(searchresult == 0) printf("=> 검색된 과목 없음!");
+    printf("\n");
+
+}
+
 /*
 void searchCourseByName(computerCourse *c,int count){
 }
-void searchCourseByCredit(computerCourse *c,int count){
-}
+
 */
 
 void listCourse(computerCourse *c, int count){
