@@ -168,8 +168,8 @@ void listCourse(computerCourse *c, int count){
 int selectMenu(){
     //main함수가 실행되고 종료되기 전까지 메뉴를 보여주는 함수
     int menu;
-    printf("\n컴퓨터공학심화 과목 조회 프로그램");
-    printf("===========================\n");
+    printf("\n**컴퓨터공학심화 과목 조회 프로그램**\n");
+    printf("================================\n");
     printf("1. 전공과목 조회\n");
     printf("2. 전공과목 추가\n");
     printf("3. 전공과목 정보 수정\n");
