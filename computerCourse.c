@@ -19,7 +19,7 @@ int addCourse(computerCourse *c){
 
 void readCourse(computerCourse c){
     //다른 함수에서도 과목 읽기가 빈번하게 나오기 때문에 readCourse 함수 추가
-    printf(" %-12s  %d학점   %9c   %s\n", c.classification, c.credit, c.designCourse, c.name);
+    printf(" %-12s  %d학점   %7c       %12s\n", c.classification, c.credit, c.designCourse, c.name);
 }
 
 int selectDataNum(computerCourse *c,int count){
@@ -59,8 +59,8 @@ int addInCart(computerCourse *cart, computerCourse c){
 
 void showchoose(computerCourse *cart, int count){ //장바구니에 담은 과목
     printf("\n==> 장바구니에 담은 과목입니다.\n");
-    printf("  이수구분      학점  설계과목여부  과목이름\n");
-    printf("============================================\n");
+    printf("  이수구분   학점     설계과목여부   과목이름\n");
+    printf("==================================================\n");
     for(int i =0; i<count; i++){
         if(cart[i].credit == -1) continue;
         //삭제됐으면 아래의 statement를 수행하지 말고 i번째 loop 나가기
@@ -113,8 +113,8 @@ void searchCourseByCredit(computerCourse *c,int count){
 
     printf("검색할 학점은? ");
     scanf("%d", &search); //검색할 학점을 입력 받아 search에 저장한다.
-    printf("  이수구분      학점  설계과목여부  과목이름\n");
-    printf("============================================\n");
+    printf("  이수구분   학점     설계과목여부   과목이름\n");
+    printf("==================================================\n");
     for(int i =0; i<count; i++){
         if(c[i].credit == -1) continue; //삭제된 함수라면 이번 loop를 끝낸다. 다른 i번째로 넘어감
         if(c[i].credit == search){ //검색할 학점과 같은 학점이 검색되면 
@@ -134,8 +134,8 @@ void searchCourseByName(computerCourse *c,int count){
     int comp=0;
     printf("검색할 과목명은? ");
     scanf("%s",sn);
-    printf("  이수구분      학점  설계과목여부  과목이름\n");
-    printf("============================================\n");
+    printf("  이수구분   학점     설계과목여부   과목이름\n");
+    printf("==================================================\n");
     for(int i=0;i<count;i++){
         if(c[i].credit==-1) continue;
         if(strstr(c[i].name,sn)){
@@ -152,8 +152,8 @@ void searchCourseByName(computerCourse *c,int count){
 
 
 void listCourse(computerCourse *c, int count){
-    printf("\n  이수구분      학점  설계과목여부  과목이름\n");
-    printf("============================================\n");
+    printf("  이수구분   학점     설계과목여부   과목이름\n");
+    printf("==================================================\n");
     for(int i =0; i<count; i++){
         if(c[i].credit == -1) continue;
         //삭제됐으면 아래의 statement를 수행하지 말고 i번째 loop 나가기
@@ -168,7 +168,8 @@ void listCourse(computerCourse *c, int count){
 int selectMenu(){
     //main함수가 실행되고 종료되기 전까지 메뉴를 보여주는 함수
     int menu;
-    printf("\n=========================\n");
+    printf("\n컴퓨터공학심화 과목 조회 프로그램");
+    printf("===========================\n");
     printf("1. 전공과목 조회\n");
     printf("2. 전공과목 추가\n");
     printf("3. 전공과목 정보 수정\n");
