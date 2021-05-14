@@ -100,7 +100,7 @@ int loadData(computerCourse *c){
             if(feof(fp)) break;
             fscanf(fp, "%d", &c[i].credit);
             fscanf(fp, "%c", &c[i].designCourse);
-            fscanf(fp, "%s", c[i].name);
+            fscanf(fp, "%[^\n]s", c[i].name);
             count++;
         }
         fclose(fp);
