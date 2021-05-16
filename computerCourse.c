@@ -86,26 +86,26 @@ void saveCourse(computerCourse *c, int count){
 }
 
 
-int loadData(computerCourse *c){
-    int count = 0;
-    FILE *fp;
-    fp = fopen("test.txt", "rt");
+int loadData(computerCourse *c){ //파일 로드 함수 구현
+    int count = 0; //총 과목의 갯수 return 하기 위한 변수 
+    FILE *fp; //파일 포인터 선언
+    fp = fopen("test.txt", "rt");  //읽기 모드로 파일 열기
     if(fp == NULL){
-        printf("=> 파일 없음\n");
+        printf("=> 파일 없음\n"); //파일이 없다면 파일이 없다고 말해주기
         return 0;
     }
     else{
         for(int i  = 0; i<100; i++){
             fscanf(fp, "%s", c[i].classification);
-            if(feof(fp)) break;
+            if(feof(fp)) break; 
             fscanf(fp, "%d", &c[i].credit);
             fscanf(fp, "%c", &c[i].designCourse);
             fscanf(fp, "%[^\n]s", c[i].name);
-            count++;
+            count++; //과목 하나씩 추가
         }
-        fclose(fp);
-        printf("=> 파일 로딩 성공!\n");
-        return count;
+        fclose(fp); //파일 꼭 닫아주기
+        printf("=> 파일 로딩 성공!\n"); //로딩 성공하면 멘트 보여주기
+        return count; //총 로딩한 과목 갯수 return
     }
 
 }
