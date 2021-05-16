@@ -89,7 +89,7 @@ void saveCourse(computerCourse *c, int count){
 int loadData(computerCourse *c){ //파일 로드 함수 구현
     int count = 0; //총 과목의 갯수 return 하기 위한 변수 
     FILE *fp; //파일 포인터 선언
-    fp = fopen("test.txt", "rt");  //읽기 모드로 파일 열기
+    fp = fopen("subject.txt", "rt");  //읽기 모드로 파일 열기
     if(fp == NULL){
         printf("=> 파일 없음\n"); //파일이 없다면 파일이 없다고 말해주기
         return 0;
