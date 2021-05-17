@@ -72,11 +72,11 @@ int login(){
 int addCourse(computerCourse *c){
     int count = 0;
     printf("\n과목이름은? ");
-    scanf(" %[^\n]s", c->name); //띄어쓰기가 포함된 과목이름이 있기 때문에 %[^\n]s사용 (엔터키 전 모든 것을 입력 받는다)
+    scanf("%[^\n]s", c->name); //띄어쓰기가 포함된 과목이름이 있기 때문에 %[^\n]s사용 (엔터키 전 모든 것을 입력 받는다)
     printf("이수구분은?(전공필수, 전공선택, 전공선택필수) ");
-    scanf(" %s", c->classification);
+    scanf("%s", c->classification);
     printf("학점은? ");
-    scanf(" %d", &c->credit);
+    scanf("%d", &c->credit);
     printf("설계과목 여부는?(Y or N) ");
     scanf(" %c", &c->designCourse);
     printf("=>과목추가완료!\n");
@@ -86,7 +86,7 @@ int addCourse(computerCourse *c){
 
 void readCourse(computerCourse c){
     //다른 함수에서도 과목 읽기가 빈번하게 나오기 때문에 readCourse 함수 추가
-    printf(" %-12s  %d학점   %7c       %12s\n", c.classification, c.credit, c.designCourse, c.name);
+    printf(" %-12s  %d학점  %13c    %s\n",c.classification, c.credit, c.designCourse,c.name);
 }
 
 int selectDataNum(computerCourse *c,int count){
@@ -127,7 +127,7 @@ int addInCart(computerCourse *cart, computerCourse c){
 void showchoose(computerCourse *cart, int count){ //장바구니에 담은 과목
     int sum=0;
     printf("\n==> 장바구니에 담은 과목입니다.\n");
-    printf("  이수구분   학점     설계과목여부   과목이름\n");
+    printf("   이수구분      학점     설계과목여부   과목이름\n");
     printf("==================================================\n");
     for(int i =0; i<count; i++){
         if(cart[i].credit == -1) continue;
@@ -138,6 +138,7 @@ void showchoose(computerCourse *cart, int count){ //장바구니에 담은 과목
         //i번째 데이터 읽기
         sum+=cart[i].credit;
     }
+    printf("==================================================\n");
     printf("                                  총 학점 : %2d학점\n",sum);
 }
 
@@ -166,8 +167,8 @@ int loadData(computerCourse *c){ //파일 로드 함수 구현
             fscanf(fp, "%s", c[i].classification);
             if(feof(fp)) break; 
             fscanf(fp, "%d", &c[i].credit);
-            fscanf(fp, "%c", &c[i].designCourse);
-            fscanf(fp, "%[^\n]s", c[i].name);
+            fscanf(fp, " %c", &c[i].designCourse);
+            fscanf(fp, " %[^\n]s", c[i].name);
             count++; //과목 하나씩 추가
         }
         fclose(fp); //파일 꼭 닫아주기
@@ -183,7 +184,7 @@ void searchCourseByCredit(computerCourse *c,int count){
 
     printf("검색할 학점은? ");
     scanf("%d", &search); //검색할 학점을 입력 받아 search에 저장한다.
-    printf("  이수구분   학점     설계과목여부   과목이름\n");
+    printf("   이수구분      학점     설계과목여부   과목이름\n");
     printf("==================================================\n");
     for(int i =0; i<count; i++){
         if(c[i].credit == -1) continue; //삭제된 함수라면 이번 loop를 끝낸다. 다른 i번째로 넘어감
@@ -204,7 +205,7 @@ void searchCourseByName(computerCourse *c,int count){
     int comp=0;
     printf("검색할 과목명은? ");
     scanf("%s",sn);
-    printf("  이수구분   학점     설계과목여부   과목이름\n");
+    printf("   이수구분      학점     설계과목여부   과목이름\n");
     printf("==================================================\n");
     for(int i=0;i<count;i++){
         if(c[i].credit==-1) continue;
@@ -222,12 +223,12 @@ void searchCourseByName(computerCourse *c,int count){
 
 
 void listCourse(computerCourse *c, int count){
-    printf("  이수구분   학점     설계과목여부   과목이름\n");
+    printf("   이수구분      학점     설계과목여부   과목이름\n");
     printf("==================================================\n");
     for(int i =0; i<count; i++){
         if(c[i].credit == -1) continue;
         //삭제됐으면 아래의 statement를 수행하지 말고 i번째 loop 나가기
-        printf("%1d", i+1);
+        printf("%-2d", i+1);
         //데이터의 번호를 먼저 출력
         readCourse(c[i]);
         //i번째 데이터 읽기
@@ -252,6 +253,7 @@ int selectMenu(){
     printf("10. 종료\n");
     printf("원하는 메뉴 번호를 입력하세요 : ");
     scanf("%d",&menu);
+    getchar();
     
     return menu;
 }
