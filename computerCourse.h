@@ -1,27 +1,34 @@
-typedef struct //ÄÄ°ø½ÉÈ­ °úÁ¤
+typedef struct //ï¿½Ä°ï¿½ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½
 {
-    char name[100]; //°ú¸ñÀÌ¸§
-    int credit; //ÇÐÁ¡
-    char designCourse; //¼³°è°ú¸ñ ¿©ºÎ(Y or N)
-    char classification[100]; //ÀÌ¼ö±¸ºÐ(Àü°øÇÊ¼ö, Àü°ø¼±ÅÃ, Àü°ø¼±ÅÃÇÊ¼ö)
+    char name[100]; //ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½
+    int credit; //ï¿½ï¿½ï¿½ï¿½
+    char designCourse; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Y or N)
+    char classification[100]; //ï¿½Ì¼ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½)
 }computerCourse;
 
-int addCourse(computerCourse *c); //¼ö¾÷ ¸ñ·Ï Ãß°¡ÇÏ±â
-void readCourse(computerCourse c); //¼ö¾÷ ¸ñ·Ï ÀÐ±â
-void updateCourse(computerCourse *c); //¼ö¾÷ ¸ñ·Ï ¾÷µ¥ÀÌÆ®
-int deleteCourse(computerCourse *c); //¼ö¾÷ »èÁ¦
-int addInCart(computerCourse *cart, computerCourse c); //¼±ÅÃÇÑ °ú¸ñÀ» Àå¹Ù±¸´Ï¿¡ ´ã´Â ±â´É
-void showchoose(computerCourse *cart, int count); //³»°¡ ´ãÀº °ú¸ñ¸¸ Á¶È¸ÇÒ ¼ö ÀÖ´Â ±â´É Ãß°¡
-void saveCourse(computerCourse *c, int count); //ÆÄÀÏ ÀúÀå ±â´É
-int loadData(computerCourse *c); //ÆÄÀÏ ºÒ·¯¿À±â ±â´É
-void searchCourseByCredit(computerCourse *c,int count); //ÇÐÁ¡À¸·Î °Ë»öÇÏ´Â ±â´É
+typedef struct{
+    char id[20];
+    char pw[20];
+}User;
+
+void signUp();
+int login();
+int addCourse(computerCourse *c); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ï±ï¿½
+void readCourse(computerCourse c); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ð±ï¿½
+void updateCourse(computerCourse *c); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
+int deleteCourse(computerCourse *c); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+int addInCart(computerCourse *cart, computerCourse c); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ù±ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+void showchoose(computerCourse *cart, int count); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
+void saveCourse(computerCourse *c, int count); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+int loadData(computerCourse *c); //ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+void searchCourseByCredit(computerCourse *c,int count); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
 
 
-void searchCourseByName(computerCourse *c,int count); //°ú¸ñÀÌ¸§À¸·Î °Ë»öÇÏ´Â ±â´É
+void searchCourseByName(computerCourse *c,int count); //ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
 
 
 int selectDataNum(computerCourse *c, int count);
-void listCourse(computerCourse *c, int count); //¼ö¾÷¸ñ·Ï ÀüÃ¼ ÀÐ±â
-int selectMenu(); //Ã³À½ ¸Þ´º ¼±ÅÃ
+void listCourse(computerCourse *c, int count); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½Ð±ï¿½
+int selectMenu(); //Ã³ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
