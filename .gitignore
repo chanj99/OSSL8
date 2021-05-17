@@ -1,4 +1,3 @@
 *.o
-subject.txt
-test.txt
+*.txt
 main.exe

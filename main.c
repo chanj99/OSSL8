@@ -3,7 +3,26 @@
 #include "computerCourse.h"
 
 int main(){
-    int menu; //ë©”ë‰´ ì„ íƒ
+    
+    while(1){
+        int menu;
+        printf("\n1. Login\n");
+        printf("2. SignUp\n");
+        printf("3. exit\n");
+        printf("select menu : ");
+        scanf("%d",&menu);
+        if(menu==1){
+            int log = login();
+            if(log == 0) return 0;
+            else if(log ==1) break;
+        }else if(menu==2){
+            signUp();
+        }else if(menu==3)
+            return 0;
+    }
+   
+
+    int menu; //¸Þ´º ¼±ÅÃ
     int index=0,count=0; 
     int cartIndex=0,cartCount=0;
     computerCourse c[100];
@@ -16,87 +35,87 @@ int main(){
         if((menu==1||menu==3||menu==4)&&count==0) continue;
 
         if(menu==1){
-            //ê³¼ëª© ì¡°íšŒ
+            //°ú¸ñ Á¶È¸
             if(count>0){ 
-                //ë§Œì•½ ì§€ê¸ˆ ë³´ìœ í•˜ê³  ìžˆëŠ” ë°ì´í„°ê°€ ìžˆë‹¤ë©´
+                //¸¸¾à Áö±Ý º¸À¯ÇÏ°í ÀÖ´Â µ¥ÀÌÅÍ°¡ ÀÖ´Ù¸é
                 listCourse(c, index);
-                //listë³´ì—¬ì£¼ê¸°
+                //listº¸¿©ÁÖ±â
             } else{
-                //ë§Œì•½ ì§€ê¸ˆ ë³´ìœ í•˜ê³  ìžˆëŠ” ë°ì´í„°ê°€ í•˜ë‚˜ë„ ì—†ë‹¤ë©´?
-                printf("ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤!\n");
+                //¸¸¾à Áö±Ý º¸À¯ÇÏ°í ÀÖ´Â µ¥ÀÌÅÍ°¡ ÇÏ³ªµµ ¾ø´Ù¸é?
+                printf("µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù!\n");
             }
         }
         else if(menu==2){
-              //ê³¼ëª© ì¶”ê°€
+              //°ú¸ñ Ãß°¡
               count += addCourse(&c[index]);
               index++;
               }
         
         else if(menu==3){
-            //ê³¼ëª© ìˆ˜ì •
+            //°ú¸ñ ¼öÁ¤
             int no = selectDataNum(c,index);
             if(no>0)
                 updateCourse(&c[no-1]);
             else
-                printf("=>ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤!\n");
+                printf("=>Ãë¼ÒµÇ¾ú½À´Ï´Ù!\n");
         }
         else if(menu==4){
-            //ê³¼ëª© ì‚­ì œ
+            //°ú¸ñ »èÁ¦
             int delCourse = selectDataNum(c, index);
             int del = 0;
             if(delCourse>0){
-                printf("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(ì‚­ì œ:1)");
+                printf("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(»èÁ¦:1)");
                 scanf("%d", &del);
                 if(del == 1){
                     if(deleteCourse(&c[delCourse-1]) == 1){
-                    printf("=>ì‚­ì œë¨!\n");
+                    printf("=>»èÁ¦µÊ!\n");
                     count --;
                     }
                 }
             }else{
-                printf("=>ì·¨ì†Œë¨!\n");
+                printf("=>Ãë¼ÒµÊ!\n");
             }
         }
         else if(menu==5){
-            //ê³¼ëª© íŒŒì¼ì— ì €ìž¥
+            //°ú¸ñ ÆÄÀÏ¿¡ ÀúÀå
             saveCourse(c,index);
         }
 
         else if(menu==6){
-            //ê³¼ëª© ì´ë¦„ìœ¼ë¡œ ê²€ìƒ‰
+            //°ú¸ñ ÀÌ¸§À¸·Î °Ë»ö
             searchCourseByName(c,index);
         }
         
         else if(menu==7){
-            //ê³¼ëª© í•™ì ìœ¼ë¡œ ê²€ìƒ‰
+            //°ú¸ñ ÇÐÁ¡À¸·Î °Ë»ö
             searchCourseByCredit(c,index);
         }
 
         else if(menu==8){
-            //ìž¥ë°”êµ¬ë‹ˆì— ê³¼ëª© ë‹´ê¸°
+            //Àå¹Ù±¸´Ï¿¡ °ú¸ñ ´ã±â
             int no = selectDataNum(c,index);
             if(no>0){
                 cartCount += addInCart(&cart[cartIndex++],c[no-1]);
             }else{
-                printf("=>ì·¨ì†Œë¨!\n");
+                printf("=>Ãë¼ÒµÊ!\n");
             }
         }
 
         else if(menu==9){ 
-            //ìž¥ë°”êµ¬ë‹ˆì— ë‹´ì€ ê³¼ëª© ë³´ì—¬ì£¼ê¸°
+            //Àå¹Ù±¸´Ï¿¡ ´ãÀº °ú¸ñ º¸¿©ÁÖ±â
             if(cartCount>0){ 
-                //ë§Œì•½ ì§€ê¸ˆ ìž¥ë°”êµ¬ë‹ˆì— ìžˆëŠ” ë°ì´í„°ê°€ ìžˆë‹¤ë©´
+                //¸¸¾à Áö±Ý Àå¹Ù±¸´Ï¿¡ ÀÖ´Â µ¥ÀÌÅÍ°¡ ÀÖ´Ù¸é
                 showchoose(cart, cartCount);
-                //ìž¥ë°”êµ¬ë‹ˆì— ë‹´ì€ ê³¼ëª© listë³´ì—¬ì£¼ê¸°
+                //Àå¹Ù±¸´Ï¿¡ ´ãÀº °ú¸ñ listº¸¿©ÁÖ±â
             } else{
-                //ë§Œì•½ ì§€ê¸ˆ ìž¥ë°”êµ¬ë‹ˆì— ìžˆëŠ” ë°ì´í„°ê°€ í•˜ë‚˜ë„ ì—†ë‹¤ë©´?
-                printf("=>ìž¥ë°”êµ¬ë‹ˆì— ë‹´ê¸´ ê³¼ëª©ì´ ì—†ìŠµë‹ˆë‹¤.\n");
+                //¸¸¾à Áö±Ý Àå¹Ù±¸´Ï¿¡ ÀÖ´Â µ¥ÀÌÅÍ°¡ ÇÏ³ªµµ ¾ø´Ù¸é?
+                printf("=>Àå¹Ù±¸´Ï¿¡ ´ã±ä °ú¸ñÀÌ ¾ø½À´Ï´Ù.\n");
             }
         
         }
         
         else if(menu==10){
-            //í”„ë¡œê·¸ëž¨ ì¢…ë£Œ
+            //ÇÁ·Î±×·¥ Á¾·á
             break;
         }
     }
